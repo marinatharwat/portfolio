@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/about_widget.dart';
-import 'package:portfolio/contact_widget.dart';
-import 'package:portfolio/project_widget.dart';
-import 'package:portfolio/skills_widget.dart';
+import 'package:marinatharwat/project_widget.dart';
+import 'package:marinatharwat/skills_widget.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
+import 'about_widget.dart';
+import 'contact_widget.dart';
 
 
 void main() {
