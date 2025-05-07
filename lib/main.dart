@@ -126,7 +126,7 @@ class HomePage extends StatelessWidget {
             ),
             SectionContainer(key: homeKey, child: const AboutSection()),
             SectionContainer(key: skillsKey, child:  SkillsSection()),
-            SectionContainer(key: projectsKey, child: const ProjectsSection()),
+            SectionContainer(key: projectsKey, child:  ProjectsSection()),
             const ContactSection(),
           ],
         ),

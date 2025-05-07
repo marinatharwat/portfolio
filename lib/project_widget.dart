@@ -8,15 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:animate_do/animate_do.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
+  ProjectsSection({super.key});
 
-  final List<Map<String, dynamic>> projects = const [
+  final List<Map<String, dynamic>> projects = [
     {
       'title': 'Tasko App',
       'description':
-          'A task management and follow-up system that enables team leaders to assign tasks to members, track their progress, monitor delayed tasks, and evaluate individual performance.',
+      'A task management and follow-up system that enables team leaders to assign tasks to members, track their progress, monitor delayed tasks, and evaluate individual performance.',
       'image': 'assets/images/tasko.png',
       'links': [
         {'icon': 'github', 'url': 'https://github.com/marinatharwat/Tasko'},
@@ -25,7 +29,7 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Haystageeb App',
       'description':
-          'A social mobile app where users can write and share prayers, interact with others, and keep track of events and fasting dates.',
+      'A social mobile app where users can write and share prayers, interact with others, and keep track of events and fasting dates.',
       'image': 'assets/images/haystageeb.png',
       'links': [
         {'icon': 'googlePlay', 'url': ''},
@@ -35,21 +39,21 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Haystageeb Dashboard',
       'description':
-          'Admin web panel to manage posts in the Haystageeb app, including adding, editing, deleting, accepting, and rejecting user submissions.',
+      'Admin web panel to manage posts in the Haystageeb app, including adding, editing, deleting, accepting, and rejecting user submissions.',
       'image': 'assets/images/haystageeb.png',
       'links': [],
     },
     {
       'title': 'Elre7la Dashboard',
       'description':
-          'A web-based system for Sunday school teachers to prepare lessons, manage attendance, and organize groups efficiently.',
+      'A web-based system for Sunday school teachers to prepare lessons, manage attendance, and organize groups efficiently.',
       'image': 'assets/images/elre7la.png',
       'links': [],
     },
     {
       'title': 'Benshty Ava Antoni',
       'description':
-          'A digital gallery that showcases stunning artworks with interactive and engaging UI design.',
+      'A digital gallery that showcases stunning artworks with interactive and engaging UI design.',
       'image': 'assets/images/benshty.jpg',
       'links': [
         {
@@ -61,13 +65,12 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Hany Nagib App',
       'description':
-          'A mobile app featuring sermons, articles, Bible verses, and prayers by preacher Hany Nagib, offering spiritual guidance and content.',
+      'A mobile app featuring sermons, articles, Bible verses, and prayers by preacher Hany Nagib, offering spiritual guidance and content.',
       'image': 'assets/images/hany.png',
       'links': [
         {
           'icon': 'googlePlay',
-          'url':
-              'https://play.google.com/store/apps/details?id=com.mina_magid.h_n_flutter.dev&pcampaignid=web_share'
+          'url': 'https://play.google.com/store/apps/details?id=com.mina_magid.h_n_flutter.dev&pcampaignid=web_share'
         },
         {'icon': 'appStoreIos', 'url': ''},
       ],
@@ -75,24 +78,17 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Hany Nagib Dashboard',
       'description':
-          'Admin dashboard to manage the content of the Hany Nagib app including adding, editing, and deleting media and articles.',
+      'Admin dashboard to manage the content of the Hany Nagib app including adding, editing, and deleting media and articles.',
       'image': 'assets/images/hanydach.png',
       'links': [],
     },
     {
       'title': 'One Source Sales',
       'description':
-          'An inventory and sales management app for AbuTig Tobacco Factory, allowing users to manage orders, customers, and stock efficiently.',
+      'An inventory and sales management app for AbuTig Tobacco Factory, allowing users to manage orders, customers, and stock efficiently.',
       'image': 'assets/images/aboutig.png',
       'links': [],
     },
-    // {
-    //   'title': 'The Chance App',
-    //   'description':
-    //       'A communication app between parents and teachers to follow up on children’s reports and coordinate within educational institutions.',
-    //   'image': 'assets/images/chance.png',
-    //   'links': [],
-    // },
     {
       'title': 'Tic-Tac-Toe Game',
       'description': 'A fun and simple tic-tac-toe game with attractive UI.',
@@ -107,7 +103,7 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Advanced Calculator',
       'description':
-          'A calculator app that performs basic and advanced operations including %, factorial, sin, cos, tan, and square root.',
+      'A calculator app that performs basic and advanced operations including %, factorial, sin, cos, tan, and square root.',
       'image': 'assets/images/calculator.png',
       'links': [
         {
@@ -118,43 +114,28 @@ class ProjectsSection extends StatelessWidget {
     },
     {
       'title': 'Todo App',
-      'description':
-          'An intuitive todo app to help users manage their tasks efficiently.',
+      'description': 'An intuitive todo app to help users manage their tasks efficiently.',
       'image': 'assets/images/todo.png',
       'links': [
         {'icon': 'github', 'url': 'https://github.com/marinatharwat/ToDo'},
       ],
     },
-    // {
-    //   'title': 'Islamic App',
-    //   'description':
-    //       'An Islamic app providing Quran Surahs, Hadiths, and a digital Sebha for spiritual use.',
-    //   'image': 'assets/images/islamic.png',
-    //   'links': [
-    //     {
-    //       'icon': 'github',
-    //       'url': 'https://github.com/marinatharwat/islami'
-    //     }
-    //   ],
-    // },
     {
       'title': 'News API App',
       'description':
-          'An app that displays news articles using a simple JSON-based API with access to current and historical news from various sources.',
+      'An app that displays news articles using a simple JSON-based API with access to current and historical news from various sources.',
       'image': 'assets/images/news.png',
       'links': [
         {'icon': 'github', 'url': 'https://github.com/marinatharwat/NewsApp'},
-
       ],
     },
     {
       'title': 'Movie App',
       'description':
-          'A movie database app that provides information such as titles, overviews, and release dates of various films.',
+      'A movie database app that provides information such as titles, overviews, and release dates of various films.',
       'image': 'assets/images/movies.png',
       'links': [
         {'icon': 'github', 'url': 'https://github.com/engyelgohary/movies_app'},
-
       ],
     },
   ];
@@ -173,16 +154,12 @@ class ProjectsSection extends StatelessWidget {
           const SizedBox(height: 20),
           LayoutBuilder(
             builder: (context, constraints) {
-              int crossAxisCount = 2;
-              if (constraints.maxWidth < 900) crossAxisCount = 2;
-              if (constraints.maxWidth < 600) crossAxisCount = 1;
-
               return GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: projects.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: crossAxisCount,
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 320,
                   mainAxisSpacing: 15,
                   crossAxisSpacing: 15,
                   childAspectRatio: 0.8,
@@ -195,8 +172,7 @@ class ProjectsSection extends StatelessWidget {
                       title: project['title'],
                       description: project['description'],
                       imagePath: project['image'],
-                      links: List<Map<String, String>>.from(
-                          project['links'] as List),
+                      links: List<Map<String, String>>.from(project['links'] as List),
                     ),
                   );
                 },
@@ -262,12 +238,12 @@ class _ProjectCardState extends State<ProjectCard> {
               borderRadius: BorderRadius.circular(12),
               boxShadow: _hovering || _pressed
                   ? [
-                      BoxShadow(
-                        color: Colors.blueAccent.withOpacity(0.3),
-                        blurRadius: 12,
-                        offset: const Offset(0, 6),
-                      ),
-                    ]
+                BoxShadow(
+                  color: Colors.blueAccent.withOpacity(0.3),
+                  blurRadius: 12,
+                  offset: const Offset(0, 6),
+                ),
+              ]
                   : [],
             ),
             padding: const EdgeInsets.all(10),
@@ -278,10 +254,13 @@ class _ProjectCardState extends State<ProjectCard> {
                   flex: 5,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(
-                      widget.imagePath,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image.asset(
+                        widget.imagePath,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

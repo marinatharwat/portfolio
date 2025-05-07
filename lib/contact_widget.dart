@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
 
@@ -102,6 +104,34 @@ class _ContactSectionState extends State<ContactSection> {
                     ? const CircularProgressIndicator(color: Colors.white)
                     : const Text("Send", style: TextStyle(fontSize: 16)),
               ),
+
+              const SizedBox(height: 30),
+              const Divider(color: Colors.white24),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.email, color: Colors.white70, size: 20),
+                  SizedBox(width: 8),
+                  Text(
+                    'marina.tharwat1999@gmail.com',
+                    style: TextStyle(color: Colors.white70),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.phone, color: Colors.white70, size: 20),
+                  SizedBox(width: 8),
+                  Text(
+                    ' (+20) 1017335120 ',
+                    style: TextStyle(color: Colors.white70),
+                  ),
+                ],
+              ),
+
             ],
           ),
         ),
