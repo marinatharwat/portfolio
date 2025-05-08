@@ -20,7 +20,7 @@ class ProjectsSection extends StatelessWidget {
     {
       'title': 'Tasko App',
       'description':
-      'A task management and follow-up system that enables team leaders to assign tasks to members, track their progress, monitor delayed tasks, and evaluate individual performance.',
+      'A task management and follow-up system that enables team leaders to assign tasks to members, track their progress',
       'image': 'assets/images/tasko.png',
       'links': [
         {'icon': 'github', 'url': 'https://github.com/marinatharwat/Tasko'},

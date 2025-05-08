@@ -21,7 +21,7 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Portfolio',
+      title: 'marina tharwat',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF2E2E2E),
         textTheme: ThemeData.dark().textTheme,
