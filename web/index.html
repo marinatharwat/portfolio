@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="marina tharwat portfolio.">
+  <meta name="description" content="Marina Tharwat Portfolio - Flutter Developer">
+
+  <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+  <meta property="og:title" content="Marina Tharwat | Flutter Developer" />
+  <meta property="og:description" content="A portfolio website showcasing Marina Tharwat's work in Flutter development." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/marinatharwat/portfolio-assets/main/e4408080-f2f7-4f29-860f-388bb5dca04d.jpg" />
+  <meta property="og:url" content="https://portfolio-experience.web.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marina Tharwat | Flutter Developer">
+  <meta name="twitter:description" content="A portfolio website showcasing Marina Tharwat's Flutter projects.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/marinatharwat/portfolio-assets/main/e4408080-f2f7-4f29-860f-388bb5dca04d.jpg">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="marina tharwat portfolio">
+  <meta name="apple-mobile-web-app-title" content="Marina Tharwat Portfolio">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png"/>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
 
-  <title>marina tharwat</title>
+  <!-- Page title in browser tab -->
+  <title>Marina Tharwat | Flutter Developer</title>
+
+  <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
 
   <script>
-    // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;
   </script>
-  <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
-  <script>
+<script>
     window.addEventListener('load', function(ev) {
-      // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
