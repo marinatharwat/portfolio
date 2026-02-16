@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Marina Tharwat Portfolio - Flutter Developer">
+
+  <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+  <meta property="og:title" content="Marina Tharwat | Flutter Developer" />
+  <meta property="og:description" content="A portfolio website showcasing Marina Tharwat's work in Flutter development." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/marinatharwat/portfolio-assets/main/e4408080-f2f7-4f29-860f-388bb5dca04d.jpg" />
+  <meta property="og:url" content="https://portfolio-experience.web.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marina Tharwat | Flutter Developer">
+  <meta name="twitter:description" content="A portfolio website showcasing Marina Tharwat's Flutter projects.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/marinatharwat/portfolio-assets/main/e4408080-f2f7-4f29-860f-388bb5dca04d.jpg">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Marina Tharwat Portfolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+  <!-- Page title in browser tab -->
+  <title>Marina Tharwat | Flutter Developer</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    const serviceWorkerVersion = "2822448781";
+  </script>
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+<script>
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
