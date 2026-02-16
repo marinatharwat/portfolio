@@ -6,15 +6,22 @@ class SkillsSection extends StatelessWidget {
   SkillsSection({super.key});
 
   final List<Map<String, dynamic>> skills = [
-    {'title': 'Flutter', 'icon': FontAwesomeIcons.mobileAlt},
-    {'title': 'Java', 'icon': FontAwesomeIcons.java},
-    {'title': 'Python', 'icon': FontAwesomeIcons.python},
+    {'title': 'Flutter', 'icon': FontAwesomeIcons.mobileScreen},
+    {'title': 'Dart', 'icon': FontAwesomeIcons.code},
+    {'title': 'Firebase', 'icon': FontAwesomeIcons.fire},
+    {'title': 'REST APIs', 'icon': FontAwesomeIcons.networkWired},
+    {'title': 'Bloc / Cubit', 'icon': FontAwesomeIcons.layerGroup},
+    {'title': 'Provider', 'icon': FontAwesomeIcons.diagramProject},
+    {'title': 'GetX', 'icon': FontAwesomeIcons.bolt},
+    {'title': 'SQLite', 'icon': FontAwesomeIcons.database},
+    {'title': 'Clean Architecture', 'icon': FontAwesomeIcons.sitemap},
+    {'title': 'Git', 'icon': FontAwesomeIcons.gitAlt},
+    {'title': 'Figma', 'icon': FontAwesomeIcons.figma},
+    {'title': 'Testing', 'icon': FontAwesomeIcons.vial},
     {'title': 'HTML', 'icon': FontAwesomeIcons.html5},
     {'title': 'CSS', 'icon': FontAwesomeIcons.css3Alt},
     {'title': 'JavaScript', 'icon': FontAwesomeIcons.js},
-    {'title': 'Firebase', 'icon': FontAwesomeIcons.fire},
-    {'title': 'figma', 'icon': FontAwesomeIcons.figma},
-
+    {'title': 'Python', 'icon': FontAwesomeIcons.python},
   ];
 
   @override
@@ -26,15 +33,15 @@ class SkillsSection extends StatelessWidget {
         children: [
           const Text(
             "My Skills",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
           LayoutBuilder(
             builder: (context, constraints) {
-              int crossAxisCount = 4;
-              if (constraints.maxWidth < 900) crossAxisCount = 3;
-              if (constraints.maxWidth < 600) crossAxisCount = 2;
-              if (constraints.maxWidth < 400) crossAxisCount = 1;
+              int crossAxisCount = 5;
+              if (constraints.maxWidth < 1100) crossAxisCount = 4;
+              if (constraints.maxWidth < 800) crossAxisCount = 3;
+              if (constraints.maxWidth < 500) crossAxisCount = 2;
 
               return GridView.builder(
                 shrinkWrap: true,
@@ -42,14 +49,15 @@ class SkillsSection extends StatelessWidget {
                 itemCount: skills.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 15,
-                  childAspectRatio: 1,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  childAspectRatio: 1.2, // 👈 صغرنا الكروت
                 ),
                 itemBuilder: (context, index) {
                   final skill = skills[index];
                   return ZoomIn(
-                    duration: Duration(milliseconds: 300 + (index * 100)),
+                    duration:
+                    Duration(milliseconds: 200 + (index * 60)),
                     child: SkillCard(skill: skill),
                   );
                 },
@@ -61,8 +69,6 @@ class SkillsSection extends StatelessWidget {
     );
   }
 }
-
-
 
 class SkillCard extends StatefulWidget {
   final Map<String, dynamic> skill;
@@ -91,37 +97,38 @@ class _SkillCardState extends State<SkillCard> {
         onTapCancel: () => setState(() => _pressed = false),
         child: AnimatedScale(
           duration: const Duration(milliseconds: 200),
-          scale: _pressed ? 1.08 : 1.0, // 👈 التكبير عند الضغط
+          scale: _pressed ? 1.05 : 1.0,
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 250),
             decoration: BoxDecoration(
-              color: _hovering ? Colors.blueGrey[700] : Colors.grey[850],
-              borderRadius: BorderRadius.circular(12),
+              color: _hovering ? Colors.blueGrey[700] : Colors.grey[900],
+              borderRadius: BorderRadius.circular(10),
               boxShadow: _hovering || _pressed
                   ? [
                 BoxShadow(
                   color: Colors.blueAccent.withOpacity(0.3),
-                  blurRadius: 12,
-                  offset: const Offset(0, 6),
+                  blurRadius: 10,
+                  offset: const Offset(0, 5),
                 ),
               ]
                   : [],
             ),
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8), // 👈 صغرنا padding
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FaIcon(
                   widget.skill['icon'] as IconData,
-                  size: 28,
+                  size: 22, // 👈 صغرنا الأيقونة
                   color: Colors.white,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
                 Text(
                   widget.skill['title'] as String,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 13,
+                    fontSize: 11, // 👈 صغرنا الخط
                   ),
                 ),
               ],
@@ -132,4 +139,3 @@ class _SkillCardState extends State<SkillCard> {
     );
   }
 }
-

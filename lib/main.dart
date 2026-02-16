@@ -199,7 +199,7 @@ class HeaderSection extends StatelessWidget {
                     label: const Text('LinkedIn', style: TextStyle(color: Colors.white)),
                   ),
                   TextButton.icon(
-                    onPressed: () => _launchURL('https://drive.google.com/file/d/14W_rxhtrIDP5mC0CvjrYP9MFECsvxJhG/view?usp=sharing'),
+                    onPressed: () => _launchURL('https://drive.google.com/file/d/1ivmBiuRzG-a8WYFJxMImsS5W3m-ObKnk/view?usp=sharing'),
                     icon: const FaIcon(FontAwesomeIcons.filePdf, color: Colors.white, size: 16),
                     label: const Text('CV', style: TextStyle(color: Colors.white)),
                   ),

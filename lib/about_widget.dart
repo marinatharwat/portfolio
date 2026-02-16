@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-
-import 'package:flutter/material.dart';
-import 'package:animate_do/animate_do.dart';
-
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:animate_do/animate_do.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -24,36 +18,12 @@ class AboutSection extends StatelessWidget {
         children: [
           BounceInDown(
             duration: const Duration(milliseconds: 1200),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.greenAccent.shade400,
-                    Colors.blueAccent.shade200,
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.greenAccent.withOpacity(0.6),
-                    blurRadius: 20,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              padding: const EdgeInsets.all(5),
-              child: const CircleAvatar(
-                radius: 120,
-                backgroundImage: AssetImage("assets/images/marina.jpeg"),
-              ),
-            ),
+            child: _profileImage(radius: 120),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           FadeInUp(
             duration: const Duration(milliseconds: 800),
-            child: _aboutContent(),
+            child: _aboutContent(isSmallScreen),
           ),
         ],
       )
@@ -64,40 +34,15 @@ class AboutSection extends StatelessWidget {
             flex: 2,
             child: FadeInLeft(
               duration: const Duration(milliseconds: 800),
-              child: _aboutContent(),
+              child: _aboutContent(isSmallScreen),
             ),
           ),
-          const SizedBox(width: 30),
+          const SizedBox(width: 40),
           Expanded(
             flex: 1,
             child: BounceInRight(
               duration: const Duration(milliseconds: 1200),
-              child: AnimatedContainer(
-                duration: const Duration(seconds: 2),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.greenAccent.shade400,
-                      Colors.blueAccent.shade200,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.greenAccent.withOpacity(0.6),
-                      blurRadius: 20,
-                      spreadRadius: 2,
-                    ),
-                  ],
-                ),
-                padding: const EdgeInsets.all(5),
-                child: const CircleAvatar(
-                  radius: 200,
-                  backgroundImage: AssetImage("assets/images/rena.jpeg"),
-                ),
-              ),
+              child: _profileImage(radius: 200),
             ),
           ),
         ],
@@ -105,73 +50,93 @@ class AboutSection extends StatelessWidget {
     );
   }
 
-  Widget _aboutContent() {
+  Widget _profileImage({required double radius}) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient(
+          colors: [
+            Colors.greenAccent.shade400,
+            Colors.blueAccent.shade200,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.greenAccent.withOpacity(0.6),
+            blurRadius: 20,
+            spreadRadius: 2,
+          ),
+        ],
+      ),
+      padding: const EdgeInsets.all(6),
+      child: CircleAvatar(
+        radius: radius,
+        backgroundImage: const AssetImage("assets/images/rena.jpeg"),
+      ),
+    );
+  }
+
+  Widget _aboutContent(bool isSmallScreen) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+      isSmallScreen ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         Text(
           "Hello! I’m Marina Tharwat",
+          textAlign: isSmallScreen ? TextAlign.center : TextAlign.start,
           style: GoogleFonts.poppins(
-            fontSize: 22,
+            fontSize: 26,
             fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          "Flutter Developer with hands-on experience in building scalable mobile and web applications. I specialize in writing clean, maintainable code using modern architecture principles.",
+          textAlign: isSmallScreen ? TextAlign.center : TextAlign.start,
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+        const SizedBox(height: 15),
+
+        /// Skills Highlights
+        Text(
+          "• Flutter (Android, iOS & Web)",
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+        Text(
+          "• State Management (BLoC, Cubit, Provider, GetX)",
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+        Text(
+          "• RESTful APIs & Firebase Integration",
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+        Text(
+          "• Clean Architecture & SOLID Principles",
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+        Text(
+          "• Local Storage & SQLite",
+          style: GoogleFonts.poppins(fontSize: 15),
+        ),
+
+        const SizedBox(height: 30),
+
+        /// Focus Section
+        Text(
+          "What I Focus On",
+          style: GoogleFonts.poppins(
+            color: Colors.green,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
           ),
         ),
         const SizedBox(height: 10),
         Text(
-          "I seek challenging opportunities where I can fully use my skills for success.",
-          style: GoogleFonts.poppins(),
-        ),
-        const SizedBox(height: 5),
-        Text(
-          "• I hold a degree in Information Technology from EELU - Assiut.",
-          style: GoogleFonts.poppins(),
-        ),
-        Text(
-          "• The only thing that makes me feel happy is coding.",
-          style: GoogleFonts.poppins(),
-        ),
-        Text(
-          "• I always try to discover the best technologies and use them to satisfy clients.",
-          style: GoogleFonts.poppins(),
-        ),
-        const SizedBox(height: 20),
-        Text(
-          "Flutter Development",
-          style: GoogleFonts.poppins(
-            color: Colors.green,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        Text(
-          "I'm developing android, ios and web applications using Flutter platform.",
-          style: GoogleFonts.poppins(),
-        ),
-        const SizedBox(height: 20),
-        Text(
-          "UI/UX Design",
-          style: GoogleFonts.poppins(
-            color: Colors.green,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        Text(
-          "I design intuitive user interfaces with a focus on user experience using modern design tools.",
-          style: GoogleFonts.poppins(),
-        ),
-        const SizedBox(height: 20),
-        Text(
-          "Testing & QA",
-          style: GoogleFonts.poppins(
-            color: Colors.green,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        Text(
-          "I write and execute test cases and ensure app quality using manual testing methods.",
-          style: GoogleFonts.poppins(),
+          "I build high-performance, user-friendly applications with strong attention to scalability and code quality. I collaborate closely with backend and UI/UX teams to deliver reliable and impactful digital products.",
+          textAlign: isSmallScreen ? TextAlign.center : TextAlign.start,
+          style: GoogleFonts.poppins(fontSize: 15),
         ),
       ],
     );
